@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>Chess</title>
+    <link rel="shortcut icon" href="./favicon.png">
+    <link rel='stylesheet' type='text/css' href='./style.css'>
+</head>
+
+<body class="background">
+    <h1 class="title">Chess</h1>
+
+    
+    <div class="modal-container">
+        <div class="modal">
+            <h2>Info</h2>
+            <hr /><span class="message"></span>
+            <hr />
+
+            <div class="modal-btns">
+                <button class="btn-rook" onclick="pawnToRook()">Rook</button>
+                <button class="btn-knight" onclick="pawnToKnight()">Knight</button>
+                <button class="btn-bishop" onclick="pawnToBishop()">Bishop</button>
+                <button class="btn-queen" onclick="pawnToQueen()">Queen</button>
+                <button class="btn-close" onclick="closeBtn()">Close</button>
+                <button class="btn-refresh" onclick="refresh()">Refresh</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="window-btns">
+        <button class="btn-refresh" id="1" onclick="refresh()">Refresh</button><br>
+        <button class="btn-undo" id="2" onclick="undo()">Undo</button>
+    </div>
+
+    
+    <div>
+        <center>
+            <h1>Randomize Players</h1>
+
+            <label for="input1">Enter Player 1 name:</label>
+            <input type="text" id="input1" placeholder="Player 1">
+
+            <br>
+            <br>
+
+            <label for="input2">Enter Player 2 name:</label>
+            <input type="text" id="input2" placeholder="Player 2">
+
+            <br>
+            <br>
+
+            <button onclick="randomizePlayers()">Randomize Players</button>
+            <br>
+
+            <script>
+                function randomizePlayers() {
+                    // Get input values
+                    var player1 = document.getElementById('input1').value;
+                    var player2 = document.getElementById('input2').value;
+
+                    // Randomly assign players
+                    var players = [player1, player2];
+                    var randomIndex = Math.floor(Math.random() * 2);
+
+                    // Output the result
+                    alert("White: " + players[randomIndex] + "\nBlack: " + players[1 - randomIndex]);
+                    
+                }
+            </script>
+        <table id="chessBoard"></table>
+        <script type='text/javascript' src='./main.js'></script>
+
+</body>
+
+</html>
